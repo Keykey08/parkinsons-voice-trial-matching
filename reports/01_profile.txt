@@ -1,0 +1,19 @@
+Shape: 195 recordings x 24 columns
+People: 32  (Parkinson's: 24, healthy: 8)
+Recordings per person: min 6, max 7
+CHECK: parkinsons.names says 31 people (23 with PD), but the file has 32 subject IDs (24 with PD). Either one person has two IDs or the documentation is off. Open question; ask in seminar.
+Recordings labelled Parkinson's: 75.4%  -> imbalanced; accuracy alone would mislead
+Missing values: 0
+Duplicate rows: 0
+Feature pairs with |correlation| > 0.95: 19  -> many jitter/shimmer measures repeat the same info
+
+Mean by group (0 = healthy, 1 = Parkinson's), most different first:
+status                0      1  ratio
+NHR               0.011  0.029  2.544
+MDVP:Jitter(Abs)  0.000  0.000  2.168
+MDVP:APQ          0.013  0.028  2.074
+MDVP:Shimmer(dB)  0.163  0.321  1.971
+MDVP:RAP          0.002  0.004  1.952
+Jitter:DDP        0.006  0.011  1.952
+Shimmer:APQ5      0.011  0.020  1.930
+MDVP:Shimmer      0.018  0.034  1.911
