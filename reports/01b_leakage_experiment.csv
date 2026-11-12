@@ -1,0 +1,4 @@
+model,AUC by recording (leaky),AUC by person (honest),BalAcc by recording,BalAcc by person
+Always predict Parkinson's,0.5,0.5,0.5,0.5
+Logistic regression,0.91,0.77,0.78,0.64
+Random forest,0.96,0.78,0.89,0.64

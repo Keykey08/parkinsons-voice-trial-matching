@@ -1,0 +1,40 @@
+Oxford: 195 recordings, 32 people, 24 PD, 8 healthy
+Istanbul: 755 recordings, 252 people, 188 PD, 64 healthy
+
+Oxford -> Istanbul, Logistic regression: 252 people, truth 75% PD, AUC 0.710
+
+Oxford -> Istanbul, Random forest: 252 people, truth 75% PD, AUC 0.777
+
+Istanbul -> Oxford, Logistic regression: 32 people, truth 75% PD, AUC 0.828
+
+Istanbul -> Oxford, Random forest: 32 people, truth 75% PD, AUC 0.812
+
+Balanced accuracy per person on the new hospital, by how the cut-off was chosen
+(for local calibration: mean over 500 random draws, with the middle 95% of draws)
+   train     test               model                 method  k labelled  cut-off  balanced acc  BA low  BA high  share flagged PD
+  Oxford Istanbul Logistic regression           a) fixed 0.5           0    0.500         0.645     NaN      NaN             0.810
+  Oxford Istanbul Logistic regression       b) tuned at home           0    0.698         0.653     NaN      NaN             0.635
+  Oxford Istanbul Logistic regression   c) local calibration          10    0.712         0.622   0.543    0.662             0.618
+  Oxford Istanbul Logistic regression   c) local calibration          20    0.722         0.625   0.544    0.660             0.610
+  Oxford Istanbul Logistic regression   c) local calibration          40    0.746         0.629   0.570    0.668             0.602
+  Oxford Istanbul Logistic regression   c) local calibration          80    0.746         0.631   0.577    0.682             0.592
+  Oxford Istanbul Logistic regression d) oracle (all labels)         252    0.745         0.671     NaN      NaN             0.583
+  Oxford Istanbul       Random forest           a) fixed 0.5           0    0.500         0.586     NaN      NaN             0.940
+  Oxford Istanbul       Random forest       b) tuned at home           0    0.831         0.631     NaN      NaN             0.290
+  Oxford Istanbul       Random forest   c) local calibration          10    0.734         0.670   0.572    0.735             0.614
+  Oxford Istanbul       Random forest   c) local calibration          20    0.740         0.681   0.579    0.738             0.603
+  Oxford Istanbul       Random forest   c) local calibration          40    0.750         0.701   0.599    0.745             0.582
+  Oxford Istanbul       Random forest   c) local calibration          80    0.754         0.713   0.616    0.760             0.565
+  Oxford Istanbul       Random forest d) oracle (all labels)         252    0.759         0.741     NaN      NaN             0.532
+Istanbul   Oxford Logistic regression           a) fixed 0.5           0    0.500         0.646     NaN      NaN             0.844
+Istanbul   Oxford Logistic regression       b) tuned at home           0    0.422         0.688     NaN      NaN             0.906
+Istanbul   Oxford Logistic regression   c) local calibration           8    0.606         0.678   0.551    0.828             0.648
+Istanbul   Oxford Logistic regression   c) local calibration          12    0.606         0.683   0.500    0.833             0.628
+Istanbul   Oxford Logistic regression   c) local calibration          16    0.606         0.689   0.500    0.893             0.590
+Istanbul   Oxford Logistic regression d) oracle (all labels)          32    0.597         0.792     NaN      NaN             0.688
+Istanbul   Oxford       Random forest           a) fixed 0.5           0    0.500         0.708     NaN      NaN             0.562
+Istanbul   Oxford       Random forest       b) tuned at home           0    0.515         0.688     NaN      NaN             0.531
+Istanbul   Oxford       Random forest   c) local calibration           8    0.416         0.664   0.500    0.775             0.612
+Istanbul   Oxford       Random forest   c) local calibration          12    0.470         0.656   0.500    0.790             0.592
+Istanbul   Oxford       Random forest   c) local calibration          16    0.502         0.646   0.436    0.813             0.572
+Istanbul   Oxford       Random forest d) oracle (all labels)          32    0.543         0.771     NaN      NaN             0.406

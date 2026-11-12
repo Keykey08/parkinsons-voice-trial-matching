@@ -1,0 +1,90 @@
+=== 1. BASIC PROFILE ===
+Istanbul shape (rows, columns): (756, 755)
+People: 252 | ids run 0 to 251
+Recordings per person: {3: 252}
+People with more than one label: 0
+People by class (1 = PD): {0: 64, 1: 188} -> 75% PD (Oxford: 75%)
+Missing values: 0 | constant columns: 0
+Features by family: {'TQWT Features': 432, 'Wavelet Features': 182, 'MFCC': 84, 'Vocal Fold': 22, 'Baseline Features': 21, 'Formant Frequencies': 4, 'Bandwidth Parameters': 4, 'Intensity Parameters': 3}
+Feature pairs with |correlation| > 0.95: 1002 of 282376
+
+=== 2. DUPLICATE ROW ===
+Rows that are exact copies of another row: [111, 113] | person id: [37]
+Duplicates if we ignore the id column (copies ACROSS people?): 1
+     id  gender  class      PPE      DFA     RPDE  numPulses
+111  37       0      1  0.79067  0.58465  0.64250        321
+112  37       0      1  0.75781  0.57600  0.65037        310
+113  37       0      1  0.79067  0.58465  0.64250        321
+After dropping the copy: 755 rows, 252 people
+
+=== 3. FEATURE MATCHING (person-level effect sizes) ===
+   family           oxford                   istanbul  median_oxford  median_istanbul  ratio_ist_over_oxf  d_PD_vs_healthy_oxford  d_PD_vs_healthy_istanbul  same_direction
+    Pitch      MDVP:Fo(Hz)                      F0_Hz          148.8            165.1                1.11                   -0.98                     -0.72            True
+   Jitter   MDVP:Jitter(%)               locPctJitter        0.00494          0.00149              0.3016                    0.74                      0.53            True
+   Jitter MDVP:Jitter(Abs)               locAbsJitter          3e-05         9.51e-06               0.317                    0.93                      0.51            True
+   Jitter         MDVP:RAP                  rapJitter         0.0025          0.00028               0.112                    0.71                      0.45            True
+   Jitter         MDVP:PPQ                 ppq5Jitter        0.00269          0.00065              0.2416                    0.77                      0.47            True
+   Jitter       Jitter:DDP                  ddpJitter        0.00749          0.00084              0.1121                    0.71                      0.45            True
+  Shimmer     MDVP:Shimmer                 locShimmer        0.02297          0.05574               2.427                    1.02                      0.43            True
+  Shimmer MDVP:Shimmer(dB)               locDbShimmer          0.221            0.503               2.276                    0.96                      0.47            True
+  Shimmer     Shimmer:APQ3                apq3Shimmer        0.01279          0.02798               2.188                    0.97                      0.34            True
+  Shimmer     Shimmer:APQ5                apq5Shimmer        0.01347          0.03375               2.506                    0.95                       0.4            True
+  Shimmer         MDVP:APQ               apq11Shimmer        0.01826          0.04745               2.599                       1                      0.64            True
+  Shimmer      Shimmer:DDA                 ddaShimmer        0.03836          0.08395               2.188                    0.97                      0.34            True
+    Noise              NHR meanNoiseToHarmHarmonicity        0.01166          0.01625               1.394                    0.49                      0.25            True
+    Noise              HNR meanHarmToNoiseHarmonicity          22.09            19.31              0.8743                   -0.92                     -0.53            True
+Nonlinear             RPDE                       RPDE          0.496           0.4841              0.9761                    0.81                      0.64            True
+Nonlinear              DFA                        DFA         0.7223           0.7007              0.9701                    0.56                      0.78            True
+Nonlinear              PPE                        PPE         0.1941           0.8097               4.173                    1.68                     -0.24           False
+Features where PD vs healthy points the SAME way in both datasets: 16 of 17
+
+=== 4. SCALE CHECK ===
+Istanbul ddpJitter / rapJitter: min 2.500, median 3.000, max 3.333, share within 1% of 3: 63.7%
+Istanbul ddaShimmer / apq3Shimmer: min 2.997, median 3.000, max 3.002, share within 1% of 3: 100.0%
+Smallest non-zero rapJitter: 2e-05
+Median ratio Istanbul / Oxford (1 = same scale):
+  F0_Hz                           1.11
+  locPctJitter                    0.30  <-- different scale
+  locAbsJitter                    0.32  <-- different scale
+  rapJitter                       0.11  <-- different scale
+  ppq5Jitter                      0.24  <-- different scale
+  ddpJitter                       0.11  <-- different scale
+  locShimmer                      2.43  <-- different scale
+  locDbShimmer                    2.28  <-- different scale
+  apq3Shimmer                     2.19  <-- different scale
+  apq5Shimmer                     2.51  <-- different scale
+  apq11Shimmer                    2.60  <-- different scale
+  ddaShimmer                      2.19  <-- different scale
+  meanNoiseToHarmHarmonicity      1.39
+  meanHarmToNoiseHarmonicity      0.87
+  RPDE                            0.98
+  DFA                             0.97
+  PPE                             4.17  <-- different scale
+
+=== 5. SEX CONFOUNDER ===
+class    PD  healthy
+gender              
+men     107       23
+women    81       41
+Share PD: men 82%, women 66%
+Chi-square test, sex vs PD (person level): chi2 = 7.59, p = 0.0059
+AUC from sex alone (person level): 0.60
+                   feature  d_men_vs_women  d_PD_all  d_PD_men_only  d_PD_women_only
+                     F0_Hz           -1.18     -0.72          -0.23            -0.82
+              locPctJitter            0.25      0.53           0.33             0.68
+              locAbsJitter            0.33      0.51           0.29             0.64
+                 rapJitter            0.23      0.45           0.26             0.60
+                ppq5Jitter            0.29      0.47           0.32             0.59
+                 ddpJitter            0.23      0.45           0.26             0.60
+                locShimmer            0.11      0.43           0.25             0.55
+              locDbShimmer            0.10      0.47           0.29             0.59
+               apq3Shimmer            0.10      0.34           0.15             0.47
+               apq5Shimmer            0.05      0.40           0.24             0.50
+              apq11Shimmer            0.17      0.64           0.53             0.68
+                ddaShimmer            0.10      0.34           0.15             0.47
+meanNoiseToHarmHarmonicity            0.11      0.25           0.08             0.38
+meanHarmToNoiseHarmonicity           -0.22     -0.53          -0.30            -0.64
+                      RPDE            0.37      0.64           0.44             0.67
+                       DFA            0.21      0.78           0.85             0.69
+                       PPE            0.03     -0.24          -0.11            -0.35
+Istanbul median pitch: men 141 Hz, women 198 Hz | Oxford median pitch: 149 Hz

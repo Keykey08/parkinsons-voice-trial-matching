@@ -1,0 +1,35 @@
+Oxford: 195 recordings, 32 people, 75% PD
+Istanbul: 755 recordings, 252 people, 75% PD
+
+Within-hospital honest AUC, 16 shared features: {'Oxford / Logistic regression': np.float64(0.732), 'Oxford / Random forest': np.float64(0.681), 'Istanbul / Logistic regression': 0.772, 'Istanbul / Random forest': 0.784}
+
+Cross-hospital person-level AUC (95% bootstrap interval over test people):
+   train     test                        scaling               model   AUC  CI low  CI high  Balanced acc at 0.5  Share flagged PD  within-hospital AUC of test site  AUC men  AUC women
+Istanbul   Oxford             Train scaling only Logistic regression 0.828   0.645    0.978                0.646             0.844                             0.732      NaN        NaN
+Istanbul   Oxford             Train scaling only       Random forest 0.807   0.623    0.950                0.708             0.562                             0.681      NaN        NaN
+Istanbul   Oxford Each hospital scaled to itself Logistic regression 0.797   0.577    0.970                0.729             0.594                             0.732      NaN        NaN
+Istanbul   Oxford Each hospital scaled to itself       Random forest 0.797   0.599    0.971                0.708             0.812                             0.681      NaN        NaN
+  Oxford Istanbul             Train scaling only Logistic regression 0.710   0.630    0.782                0.645             0.810                             0.772    0.657      0.720
+  Oxford Istanbul             Train scaling only       Random forest 0.777   0.713    0.835                0.586             0.940                             0.784    0.720      0.779
+  Oxford Istanbul Each hospital scaled to itself Logistic regression 0.719   0.648    0.790                0.653             0.603                             0.772    0.635      0.740
+  Oxford Istanbul Each hospital scaled to itself       Random forest 0.765   0.694    0.828                0.554             0.940                             0.784    0.750      0.740
+
+Standardised logistic regression coefficients (positive = pushes towards PD):
+               Oxford  Istanbul  same sign
+pitch_hz        -0.39     -0.18       True
+jitter_local     0.03      0.42       True
+jitter_abs       0.17     -0.04      False
+jitter_rap       0.17     -0.05      False
+jitter_ppq5      0.13      0.27       True
+jitter_ddp       0.17     -0.05      False
+shimmer_local    0.26      0.04       True
+shimmer_db       0.21      0.33       True
+shimmer_apq3     0.10     -0.34      False
+shimmer_apq5     0.26     -0.38      False
+shimmer_apq11    0.43      0.92       True
+shimmer_dda      0.10     -0.34      False
+nhr             -0.15     -0.20       True
+hnr             -0.14     -0.04       True
+rpde             0.11      0.17       True
+dfa              0.21      0.62       True
+Same sign in both hospitals: 10 of 16

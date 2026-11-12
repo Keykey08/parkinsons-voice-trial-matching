@@ -1,0 +1,18 @@
+family,oxford,istanbul,note,median_oxford,median_istanbul,ratio_ist_over_oxf,d_PD_vs_healthy_oxford,d_PD_vs_healthy_istanbul,same_direction
+Pitch,MDVP:Fo(Hz),F0_Hz,Istanbul: 1 / meanPeriodPulses,148.79,165.09310921173324,1.109571269653426,-0.98,-0.72,True
+Jitter,MDVP:Jitter(%),locPctJitter,local jitter; both stored as a fraction,0.00494,0.00149,0.3016194331983806,0.74,0.53,True
+Jitter,MDVP:Jitter(Abs),locAbsJitter,seconds,3e-05,9.51e-06,0.317,0.93,0.51,True
+Jitter,MDVP:RAP,rapJitter,3-point average,0.0025,0.00028,0.11199999999999999,0.71,0.45,True
+Jitter,MDVP:PPQ,ppq5Jitter,5-point average,0.00269,0.00065,0.24163568773234198,0.77,0.47,True
+Jitter,Jitter:DDP,ddpJitter,= 3 x RAP by definition,0.00749,0.00084,0.11214953271028037,0.71,0.45,True
+Shimmer,MDVP:Shimmer,locShimmer,local shimmer,0.02297,0.05574,2.42664344797562,1.02,0.43,True
+Shimmer,MDVP:Shimmer(dB),locDbShimmer,decibels,0.221,0.503,2.276018099547511,0.96,0.47,True
+Shimmer,Shimmer:APQ3,apq3Shimmer,3-point,0.01279,0.02798,2.187646598905395,0.97,0.34,True
+Shimmer,Shimmer:APQ5,apq5Shimmer,5-point,0.01347,0.03375,2.5055679287305126,0.95,0.4,True
+Shimmer,MDVP:APQ,apq11Shimmer,MDVP APQ is the 11-point version,0.01826,0.04745,2.5985761226725086,1.0,0.64,True
+Shimmer,Shimmer:DDA,ddaShimmer,= 3 x APQ3 by definition,0.03836,0.08395,2.1884775808133474,0.97,0.34,True
+Noise,NHR,meanNoiseToHarmHarmonicity,noise-to-harmonics ratio,0.01166,0.016253,1.393910806174957,0.49,0.25,True
+Noise,HNR,meanHarmToNoiseHarmonicity,"harmonics-to-noise, dB",22.085,19.31,0.8743491057278695,-0.92,-0.53,True
+Nonlinear,RPDE,RPDE,Little et al. measure,0.495954,0.4841,0.976098589788569,0.81,0.64,True
+Nonlinear,DFA,DFA,Little et al. measure,0.722254,0.70069,0.9701434675335825,0.56,0.78,True
+Nonlinear,PPE,PPE,Little et al. measure,0.194052,0.80973,4.172747510976439,1.68,-0.24,False

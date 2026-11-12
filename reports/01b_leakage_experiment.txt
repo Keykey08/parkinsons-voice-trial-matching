@@ -1,0 +1,11 @@
+01b_baselines_parkinsons.py run log
+Run by: Claude, on Kerem's request (Kerem in seminar), 12 Nov 2026 18:07 UTC
+Environment: Python 3.13.18, scikit-learn 1.9.1, pandas 3.0.5
+Data: data/raw/parkinsons.data (195 recordings)
+
+                     model  AUC by recording (leaky)  AUC by person (honest)  BalAcc by recording  BalAcc by person
+Always predict Parkinson's                      0.50                    0.50                 0.50              0.50
+       Logistic regression                      0.91                    0.77                 0.78              0.64
+             Random forest                      0.96                    0.78                 0.89              0.64
+
+Result identical to the CSV saved on 12 Nov 10:44 and to the expected values in the script header.

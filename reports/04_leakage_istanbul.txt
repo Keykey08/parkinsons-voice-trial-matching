@@ -1,0 +1,31 @@
+Istanbul after dropping the duplicate: 755 recordings, 252 people
+Feature counts: {'Sex only': 1, 'Shared 16': 16, 'Shared 16 + sex': 17, 'All 752': 752}
+
+Person-level results, mean [min-max] over 10 repeats of 5-fold cross-validation:
+       features               model                split               AUC      Balanced acc           AUC men         AUC women
+       Sex only Logistic regression   By person (honest) 0.568 [0.55-0.59]   0.605 [0.6-0.6]               NaN               NaN
+       Sex only Logistic regression By recording (leaky)  0.57 [0.56-0.58]   0.605 [0.6-0.6]               NaN               NaN
+      Shared 16 Logistic regression   By person (honest) 0.772 [0.76-0.79]  0.689 [0.67-0.7] 0.743 [0.73-0.77] 0.764 [0.75-0.78]
+      Shared 16 Logistic regression By recording (leaky)  0.792 [0.78-0.8] 0.697 [0.69-0.71]  0.77 [0.76-0.78]  0.78 [0.77-0.79]
+      Shared 16       Random forest   By person (honest)  0.784 [0.77-0.8] 0.712 [0.69-0.74] 0.762 [0.74-0.79] 0.764 [0.74-0.78]
+      Shared 16       Random forest By recording (leaky)  0.86 [0.85-0.88] 0.749 [0.73-0.76] 0.877 [0.85-0.91] 0.828 [0.82-0.84]
+Shared 16 + sex Logistic regression   By person (honest) 0.772 [0.76-0.79] 0.691 [0.67-0.71] 0.745 [0.72-0.78] 0.751 [0.74-0.77]
+Shared 16 + sex Logistic regression By recording (leaky)  0.797 [0.79-0.8] 0.718 [0.69-0.73] 0.785 [0.77-0.79] 0.773 [0.77-0.78]
+Shared 16 + sex       Random forest   By person (honest) 0.781 [0.76-0.79] 0.709 [0.69-0.73] 0.758 [0.74-0.79] 0.761 [0.74-0.78]
+Shared 16 + sex       Random forest By recording (leaky) 0.861 [0.85-0.88] 0.743 [0.72-0.77] 0.877 [0.85-0.91] 0.829 [0.82-0.85]
+        All 752 Logistic regression   By person (honest) 0.832 [0.81-0.86]  0.749 [0.73-0.8] 0.795 [0.75-0.83] 0.846 [0.81-0.88]
+        All 752 Logistic regression By recording (leaky) 0.933 [0.92-0.94] 0.841 [0.81-0.86]  0.921 [0.9-0.94] 0.934 [0.93-0.94]
+        All 752       Random forest   By person (honest)  0.85 [0.83-0.86]  0.741 [0.7-0.78] 0.803 [0.77-0.82] 0.872 [0.85-0.89]
+        All 752       Random forest By recording (leaky) 0.953 [0.95-0.96] 0.849 [0.82-0.88] 0.957 [0.94-0.97] 0.952 [0.94-0.96]
+
+Leakage gap (AUC by recording minus AUC by person):
+  Sex only         Logistic regression  0.570 -> 0.568  (gap +0.003)
+  Shared 16        Logistic regression  0.792 -> 0.772  (gap +0.020)
+  Shared 16        Random forest        0.860 -> 0.784  (gap +0.077)
+  Shared 16 + sex  Logistic regression  0.797 -> 0.772  (gap +0.025)
+  Shared 16 + sex  Random forest        0.861 -> 0.781  (gap +0.080)
+  All 752          Logistic regression  0.933 -> 0.832  (gap +0.101)
+  All 752          Random forest        0.953 -> 0.850  (gap +0.102)
+
+Floor to beat: sex only, honest split, AUC 0.568 (0.60 if computed directly on all 252 people as in 03; slightly lower here because each fold's model sees a slightly different share of PD among men and women)
+Oxford for comparison (01b_baselines_parkinsons.py, 32 people, all 22 features): LR 0.91 -> 0.77, RF 0.96 -> 0.78
