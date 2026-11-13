@@ -161,6 +161,17 @@ Write any row you cannot explain here, then ask.
 
 ---
 
-## 08_match_trials.py: trial matcher (pending the trial download)
+## 08_match_trials.py: trial matcher (run by Claude, 13 Nov 2026)
 
-Script and 20 fictional patients are in place; `02_fetch_trials.py` has not run because ClinicalTrials.gov was unreachable from the analysis environment on 13 Nov 2026. When it runs, add rows here for: number of trials fetched, trials dropped for missing eligibility text, mean eligible trials per patient after age/sex filters, and mean overlap between TF-IDF and keyword top-5. Check at least 3 patients' top-5 by reading the actual eligibility text before quoting anything.
+Corpus fetched 13 Nov 2026 with `02_fetch_trials.py`. Verify a row by re-running both scripts and reading three patients' top trials on ClinicalTrials.gov.
+
+| # | Result | Reference | Run status | My value | What it means (my words) | Verified |
+|---|---|---|---|---|---|---|
+| 08.1 | Recruiting PD trials fetched / kept after dropping trivial eligibility text | 671 / 670 | Claude ran | | | |
+| 08.2 | Trials with a UK site | 48 | Claude ran | | | |
+| 08.3 | Eligible trials per patient after age/sex filters (min to max) | 527 to 658 | Claude ran | | | |
+| 08.4 | TF-IDF top-5 overlap with keyword top-5, mean per patient | 0.9 of 5 | Claude ran | | | |
+| 08.5 | Best TF-IDF score per patient (min / median / max) | 0.064 / 0.102 / 0.232 | Claude ran | | | |
+| 08.6 | Clear retrieval failure cases to be able to explain | P18 (breast-cancer trials), P17 (top hit likely ineligible), P14 (pacemaker vs stimulation trials) | Claude ran | | | |
+
+Outputs: `reports/08_trial_matches.csv`, `08_trial_matches.md`, `08_explanations_DRAFT.md` (banner stays until you verify three patients against the registry).

@@ -1,0 +1,101 @@
+patient,age,sex,eligible_trials,rank,nct_id,title,phase,min_age,max_age,tfidf_score,in_keyword_top5
+P01,63,male,658,1,NCT07432958,A Study to Evaluate the Effectiveness of Two Doses of AP-472 as Adjunctive Therapy to Levodopa in Parkinson's Disease (PD) Participants With Motor Fluctuations,PHASE2,30 Years,80 Years,0.0985,False
+P01,63,male,658,2,NCT07700862,Directional PSA Versus STN DBS for TD-PD,,18 Years,80 Years,0.0935,False
+P01,63,male,658,3,NCT04991831,A Post-Approval Registry for Exablate 4000 Type 1.0 and Type 1.1 for Unilateral Thalamotomy for the Treatment of Medication-Refractory Tremor Dominant Idiopathic Parkinson's Disease,,30 Years,99 Years,0.0875,False
+P01,63,male,658,4,NCT07810296,Comparison of Benzhexol and Procyclidine for Tremor in Tremor-Predominant Parkinson's Disease,,40 Years,70 Years,0.0798,False
+P01,63,male,658,5,NCT07911670,Exploratory Clinical Trial of UX-DA003 Injection for the Treatment of Patients With Parkinson's Disease,EARLY_PHASE1,30 Years,75 Years,0.0694,False
+P02,71,female,616,1,NCT07432958,A Study to Evaluate the Effectiveness of Two Doses of AP-472 as Adjunctive Therapy to Levodopa in Parkinson's Disease (PD) Participants With Motor Fluctuations,PHASE2,30 Years,80 Years,0.1193,True
+P02,71,female,616,2,NCT02060695,Temporal Relationship Between Motor Fluctuations and Nonmotor Fluctuations,,,,0.1056,False
+P02,71,female,616,3,NCT07761936,Safinamide vs Placebo for Pain in Patients With Parkinson's Disease and Motor Fluctuations,PHASE3,18 Years,,0.0895,True
+P02,71,female,616,4,NCT06928519,"Efficacy and Safety of Entacapone Combined With Madopar in the Treatment of Early Parkinson's Disease: An Observational, Multicenter, Case-Control Study",,18 Years,80 Years,0.0828,False
+P02,71,female,616,5,NCT07138560,BOOST-PD A Naturalistic Study on IPX-203 for Parkinson's Disease,PHASE4,40 Years,,0.0793,True
+P03,45,male,559,1,NCT07752355,Young Onset Parkinson's Disease Subtypes and Pathogenic Mechanisms,,18 Years,,0.165,False
+P03,45,male,559,2,NCT03508960,Chinese EOPD Registry,,,50 Years,0.1512,False
+P03,45,male,559,3,NCT02760108,Parkinson's Families Project,,16 Years,,0.1464,False
+P03,45,male,559,4,NCT04994015,Parkinson's Foundation PD GENEration Genetic Registry,,18 Years,,0.1306,False
+P03,45,male,559,5,NCT06329739,Genetics in Parkinson's Disease: Behavioral and Cognitive Outcomes,,18 Years,,0.1261,False
+P04,58,female,657,1,NCT06573762,Home-Based Monitoring in Parkinson's Disease,,50 Years,110 Years,0.0822,False
+P04,58,female,657,2,NCT05385315,Towards the Validation of a New Blood Biomarker for the Early Diagnosis of Parkinson's Disease,,18 Years,,0.0712,False
+P04,58,female,657,3,NCT06080659,Network-based biOmarker Discovery of Neurodegenerative Diseases Using Multimodal Connectivity,,50 Years,80 Years,0.0711,False
+P04,58,female,657,4,NCT07170475,A Phase Ib Trial of Combined Febuxostat and Inosine Therapy in Patients With Parkinson's Disease,PHASE1,18 Years,80 Years,0.0687,True
+P04,58,female,657,5,NCT06831500,Feasibility Study Assessing the Effect of Carbidopa/Levodopa Ratio on Orthostatic Hypotension in Multiple System Atrophy - Parkinsonian Type and Parkinson Disease.,"PHASE1,PHASE2",,,0.0606,False
+P05,77,male,550,1,NCT04720365,Medico-economic Evaluation Rehabilitation by Serious Games at Home for the Management of Patients With Parkinson's Disease Suffering From Gait and Balance Disorders,,18 Years,,0.0904,False
+P05,77,male,550,2,NCT06405334,Kinematic and Neural Dynamics of Postural Instability in Parkinson's Disease,,18 Years,,0.0849,False
+P05,77,male,550,3,NCT05820074,Investigating Neural Biomarkers for Gait in Parkinson's Patients,,18 Years,,0.0813,False
+P05,77,male,550,4,NCT07748962,Decoding the Neural Mechanisms Underlying Postural Instability and Gait Dysfunction in Parkinson's Disease,,18 Years,,0.0757,False
+P05,77,male,550,5,NCT06505460,Exploring the Possible Beneficial Impact of Non-invasive and Invasive Neuromodulation on Freezing of Gait in Parkinson's Disease During Different Ambulatory Complexities: An Electrophysiological and fMRI Study,,20 Years,90 Years,0.0741,False
+P06,66,female,644,1,NCT07455760,Investigating Subcortical Contributions to Speech Sequencing in Deep Brain Stimulator Recipients,,18 Years,,0.1237,False
+P06,66,female,644,2,NCT07730073,"Efficacy of LSVT-LOUD Therapy on Voice, Speech, and Quality of Life in Parkinson's Disease",,40 Years,80 Years,0.1231,False
+P06,66,female,644,3,NCT06485986,Frontosubthalamic Networks in Parkinson's Disease.,,18 Years,,0.118,False
+P06,66,female,644,4,NCT05182892,REducing SPEECH-related Side-effects of Deep Brain Stimulation in Parkinson's Disease Via Automated Speech Analysis,,18 Years,,0.1102,False
+P06,66,female,644,5,NCT05968703,Combined STN and NBM Deep Brain Stimulation for Mild Cognitive Impairment in Parkinson's Disease,,21 Years,80 Years,0.0949,False
+P07,69,male,643,1,NCT06237868,rTMS Over the Dorsolateral Prefrontal Cortex for the Treatment of Impulse Control Disorders in Parkinson's Disease,,18 Years,,0.1125,False
+P07,69,male,643,2,NCT06498349,Bilateral Subthalamic Stimulation in PD Patients With Impulse Control Disorders - STIMPulseControl,,18 Years,70 Years,0.1078,False
+P07,69,male,643,3,NCT07505394,Efficacy of a Prediction Model-based Algorithm to PREVENT Drug-induced Impulse Control Disorders in Parkinson's Disease,,18 Years,,0.1065,True
+P07,69,male,643,4,NCT04616508,Online Motor Control in People With Parkinson's Disease,,18 Years,85 Years,0.0988,False
+P07,69,male,643,5,NCT07151378,Intestinal Levodopa + Entacapone Therapy (Lecigon®) to Counteract Dopaminergic Desensitization and Neuropsychiatric Complications in Parkinson's Disease,PHASE3,18 Years,75 Years,0.0875,True
+P08,74,female,615,1,NCT06573762,Home-Based Monitoring in Parkinson's Disease,,50 Years,110 Years,0.0855,False
+P08,74,female,615,2,NCT06548256,The Clinical Application of Clostridium Butyricum Miyairisan for Motor and Non-motor Symptoms in Parkinson's Disease,,20 Years,90 Years,0.081,False
+P08,74,female,615,3,NCT05934188,Exploring the Gut-Brain Axis in Ageing and Neurodegeneration,,20 Years,90 Years,0.0795,False
+P08,74,female,615,4,NCT06489483,Action Regulation Behavioral,,18 Years,80 Years,0.0791,True
+P08,74,female,615,5,NCT07190404,Multicontext Approach for Cognitive Function in Parkinson Disease,,50 Years,,0.0747,False
+P09,52,male,649,1,NCT07365566,Pain Assessment in Patients With Idiopathic Rapid Eye Movement (REM) Sleep Behaviour Disorder,,18 Years,,0.1837,True
+P09,52,male,649,2,NCT06582121,Study of Sleep Disorders in Prodromal and Definite Parkinsons Disease,,18 Years,,0.1223,False
+P09,52,male,649,3,NCT07299240,Remote Ischemic Conditioning for Sleep Disturbances and Other Non-motor Symptoms in Parkinson's Disease,,50 Years,70 Years,0.1171,True
+P09,52,male,649,4,NCT06548256,The Clinical Application of Clostridium Butyricum Miyairisan for Motor and Non-motor Symptoms in Parkinson's Disease,,20 Years,90 Years,0.1152,False
+P09,52,male,649,5,NCT07790744,"A Comprehensive, Multimodal Characterization of Prodromal PD in Subjects With RBD",,18 Years,,0.1149,True
+P10,61,female,658,1,NCT06815302,TURN-IT FOG: Improving Turning and Freezing of Gait in People With PD,,50 Years,80 Years,0.1296,False
+P10,61,female,658,2,NCT05680597,Balance Tele-Rehab in Parkinson's Disease,,55 Years,85 Years,0.1003,False
+P10,61,female,658,3,NCT05644327,Exercise to Improve Sleep in Parkinson's Disease,,40 Years,,0.0913,False
+P10,61,female,658,4,NCT07432958,A Study to Evaluate the Effectiveness of Two Doses of AP-472 as Adjunctive Therapy to Levodopa in Parkinson's Disease (PD) Participants With Motor Fluctuations,PHASE2,30 Years,80 Years,0.0889,True
+P10,61,female,658,5,NCT06967493,Effects of Amazonian Dance on Motor and Non-motor Symptoms of People With Parkinson's: Study Protocol,,50 Years,80 Years,0.0878,False
+P11,80,male,548,1,NCT07257861,Interest of Continuous Subcutaneous Apomorphine in Parkinsonian Patients at the End of Life,,18 Years,,0.094,False
+P11,80,male,548,2,NCT07932561,Expiratory Muscle Strength Training for People With Parkinson's Disease,,,,0.0922,True
+P11,80,male,548,3,NCT06573762,Home-Based Monitoring in Parkinson's Disease,,50 Years,110 Years,0.0779,False
+P11,80,male,548,4,NCT07839793,A 12-Week Study of Flexilev With the OraFID Device and App in Parkinson's Patients,PHASE4,30 Years,,0.0741,False
+P11,80,male,548,5,NCT07585409,Physical Activity in Persons With Parkinson's Disease,,18 Years,,0.0674,False
+P12,49,female,563,1,NCT07787299,Wearable for Assessing Tremor and Continuous Health in Parkinson's Disease and Essential Tremor,,18 Years,,0.1055,False
+P12,49,female,563,2,NCT01581580,Deep Brain Stimulation Surgery for Movement Disorders,,18 Years,99 Years,0.0821,False
+P12,49,female,563,3,NCT07380737,Feasibility and Preliminary Effects of the Walking Tall App for Home-Based Gait Training in Parkinson's Disease: A Pilot Study,,40 Years,85 Years,0.0655,False
+P12,49,female,563,4,NCT07182058,Virtual tES Device Treatment for Parkinson's Disease Motor Symptoms,"PHASE1,PHASE2",18 Years,80 Years,0.0649,False
+P12,49,female,563,5,NCT06679374,Reducing Falls With Varenicline in Hypocholinergic Parkinson Disease,PHASE2,45 Years,,0.0611,False
+P13,67,male,644,1,NCT07207122,Effects of Transcranial Focused Ultrasound Stimulation (tFUS) on Neurological and Cognitive Outcomes in Parkinson's Disease,,22 Years,80 Years,0.1131,False
+P13,67,male,644,2,NCT02060695,Temporal Relationship Between Motor Fluctuations and Nonmotor Fluctuations,,,,0.1084,False
+P13,67,male,644,3,NCT06891781,Investigating Adaptive Deep Brain Stimulation in Parkinson's Disease Management,,18 Years,,0.0997,True
+P13,67,male,644,4,NCT07172295,Modulate Tremor Severity With Low-intensity Focused Ultrasound Stimulation Targeting the Deep Nucleus of Patients With Refractory Hand Tremor.,,18 Years,80 Years,0.0952,False
+P13,67,male,644,5,NCT06687837,Treating Parkinson's Disease Through Transplantation of Autologous Stem Cell-Derived Dopaminergic Neurons,PHASE1,45 Years,80 Years,0.0859,True
+P14,72,female,616,1,NCT03217110,Cerebellar Stimulation and Cognitive Control,,18 Years,90 Years,0.0947,False
+P14,72,female,616,2,NCT07226284,Effects of Vagal Nerve Stimulation on Leg Muscle Activity and Posture in Parkinson's Disease,,21 Years,76 Years,0.0737,False
+P14,72,female,616,3,NCT07371338,"Phase 1 Clinical Trial to Evaluate the Safety, Efficacy, and Pharmacokinetics of IPS101A in Parkinson's Disease Patients",PHASE1,50 Years,80 Years,0.0698,False
+P14,72,female,616,4,NCT07330258,A US Study That Observes How Parkinson's Disease Changes Over Time in Patients Who Still Have Movement Symptoms Despite Taking Parkinson's Medications,,45 Years,75 Years,0.0683,True
+P14,72,female,616,5,NCT07400731,Short and Long-term Responses of PD Symptoms to Earstim,,44 Years,,0.0679,False
+P15,56,male,657,1,NCT05070013,Adaptive Neurostimulation to Restore Sleep in Parkinson's Disease (Aim 2),,18 Years,80 Years,0.0644,True
+P15,56,male,657,2,NCT05644327,Exercise to Improve Sleep in Parkinson's Disease,,40 Years,,0.0614,False
+P15,56,male,657,3,NCT07432958,A Study to Evaluate the Effectiveness of Two Doses of AP-472 as Adjunctive Therapy to Levodopa in Parkinson's Disease (PD) Participants With Motor Fluctuations,PHASE2,30 Years,80 Years,0.0594,False
+P15,56,male,657,4,NCT06634641,Clozapine-related Immunodeficiency in Parkinsons Disease,PHASE4,18 Years,,0.058,False
+P15,56,male,657,5,NCT07641556,The Effects of Tele-Rehabilitation-Based Dual-Task Upper Extremity Training in Patients With Parkinson's Disease,,40 Years,,0.0563,False
+P16,64,female,658,1,NCT07002034,RE104 Safety and Efficacy Study in Adjustment Disorder in Cancer and Other Medical Illnesses,PHASE2,18 Years,80 Years,0.0944,False
+P16,64,female,658,2,NCT06291051,Evaluation of the Safety of Electrical Spinal Cord Stimulation in Parkinson's Patients Presenting With Painful Camptocormia,,18 Years,,0.0832,True
+P16,64,female,658,3,NCT07219927,Real-World Patient Experiences Using Continuous Subcutaneous Apomorphine Infusion (ONAPGOTM) in the United States:,,18 Years,,0.0734,False
+P16,64,female,658,4,NCT07400731,Short and Long-term Responses of PD Symptoms to Earstim,,44 Years,,0.0598,False
+P16,64,female,658,5,NCT07257861,Interest of Continuous Subcutaneous Apomorphine in Parkinsonian Patients at the End of Life,,18 Years,,0.0578,False
+P17,59,male,657,1,NCT07882108,Ginger-PD: Ginger as a Modifier of Ghrelin Levels and Gut Function in Parkinson's Disease,,55 Years,,0.2319,False
+P17,59,male,657,2,NCT07365566,Pain Assessment in Patients With Idiopathic Rapid Eye Movement (REM) Sleep Behaviour Disorder,,18 Years,,0.185,False
+P17,59,male,657,3,NCT07786116,The Role of METhanogens in the PROgression Of Parkinson's Disease and Related Neurological Conditions,,55 Years,,0.1829,False
+P17,59,male,657,4,NCT07790744,"A Comprehensive, Multimodal Characterization of Prodromal PD in Subjects With RBD",,18 Years,,0.1191,True
+P17,59,male,657,5,NCT06582121,Study of Sleep Disorders in Prodromal and Definite Parkinsons Disease,,18 Years,,0.119,False
+P18,70,female,642,1,NCT06966700,"A Clinical Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) in People With Breast Cancer (MK-2870-032)",PHASE3,18 Years,,0.095,False
+P18,70,female,642,2,NCT06312176,A Study of Sacituzumab Tirumotecan (MK-2870) as a Single Agent and in Combination With Pembrolizumab (MK-3475) Versus Treatment of Physician's Choice in Participants With HR+/HER2- Unresectable Locally Advanced or Metastatic Breast Cancer (MK-2870-010),PHASE3,18 Years,,0.0863,False
+P18,70,female,642,3,NCT07432958,A Study to Evaluate the Effectiveness of Two Doses of AP-472 as Adjunctive Therapy to Levodopa in Parkinson's Disease (PD) Participants With Motor Fluctuations,PHASE2,30 Years,80 Years,0.0851,False
+P18,70,female,642,4,NCT06841354,"A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",PHASE3,18 Years,,0.0843,False
+P18,70,female,642,5,NCT05370079,Control Cohort CTRL COH,,18 Years,,0.0811,False
+P19,43,female,527,1,NCT07752355,Young Onset Parkinson's Disease Subtypes and Pathogenic Mechanisms,,18 Years,,0.1554,False
+P19,43,female,527,2,NCT07310147,Empower Your Mind to Embrace Your Life: an Online ACT Intervention for Young-Onset Parkinson's Disease,,21 Years,65 Years,0.12,False
+P19,43,female,527,3,NCT03508960,Chinese EOPD Registry,,,50 Years,0.1004,False
+P19,43,female,527,4,NCT06088355,Moderate Versus High Volume Light-Moderate Intensity Exercise for People With Moderate Parkinson's Disease,,40 Years,,0.0824,False
+P19,43,female,527,5,NCT07297407,Prevention-in-PD-Study,,30 Years,85 Years,0.0659,False
+P20,75,male,612,1,NCT07567794,GBPDC: Gut-Brain in PD Consortium Master Protocol,,21 Years,80 Years,0.0846,False
+P20,75,male,612,2,NCT07432958,A Study to Evaluate the Effectiveness of Two Doses of AP-472 as Adjunctive Therapy to Levodopa in Parkinson's Disease (PD) Participants With Motor Fluctuations,PHASE2,30 Years,80 Years,0.0836,False
+P20,75,male,612,3,NCT07422675,SAD Study in Patients With Parkinson's Disease and Motor Fluctuations,PHASE1,40 Years,80 Years,0.0716,False
+P20,75,male,612,4,NCT07213856,Nutritional Intervention for Constipation Symptoms in Patients With Parkinson's Disease,,18 Years,,0.0656,False
+P20,75,male,612,5,NCT06167681,"The Safety, Tolerability and Efficacy of NouvNeu001 for Parkinson's Disease","PHASE1,PHASE2",50 Years,75 Years,0.0638,False
