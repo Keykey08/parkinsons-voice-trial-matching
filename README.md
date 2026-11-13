@@ -1,6 +1,6 @@
 # Parkinson's from the voice: how much of the reported accuracy is real?
 
-**Status, 13 Nov 2026:** Part A (voice evidence, scripts 01 to 07) is complete. Part B (matching fictional patients to clinical trials) is built end to end: 20 fictional patient profiles, hard-filter + TF-IDF matcher (`08`), ethics note. The one step not yet run is the trial download itself (`02`), pending network access to ClinicalTrials.gov from the analysis environment; the script is ready and runs anywhere with ordinary internet.
+**Status, 13 Nov 2026:** Part A (voice evidence, scripts 01 to 07) and Part B (trial matcher, `02` + `08`) are complete. Both stages have been run: 671 recruiting trials fetched on 13 Nov 2026, all 20 patients matched.
 
 > Research project only. Not a diagnostic tool. Nothing here detects or diagnoses Parkinson's. Only public research datasets and fictional patients are used.
 
@@ -98,7 +98,7 @@ A retrieval exercise built on the lesson of Part A: keep hard facts and soft sim
 - `data/patients_fictional.json`: 20 fictional UK patient profiles covering newly diagnosed to advanced disease, DBS, cognitive impairment, young onset and common comorbidities. Written **before** any trial data was fetched, so they could not be tailored to the trials (same pre-commitment discipline as the `06` predictions).
 - `02_fetch_trials.py`: downloads recruiting Parkinson's trials from the public ClinicalTrials.gov registry (API v2) with title, summary, eligibility text, age limits and sex.
 - `08_match_trials.py`: applies the stated hard criteria first (age range, sex) as filters a text model can never overrule, then ranks the remaining trials by TF-IDF cosine similarity, with a plain keyword-overlap baseline alongside. TF-IDF rather than a neural encoder is deliberate: every score decomposes into which words matched, so a ranking can be audited by hand. The vectorizer is the one swappable line if a neural upgrade is wanted.
-- Outputs: `reports/08_trial_matches.csv` and `.md`, with every match carrying its NCT number so claims trace to the registry. Per-match explanations are drafted by an LLM and marked unverified until checked by a person against the eligibility text.
+- Run on 13 Nov 2026: 671 recruiting trials fetched (670 kept), hard filters leave 527 to 658 candidates per patient, and the TF-IDF and keyword top-5s share only 0.9 trials per patient on average, so ranker choice alone changes who is shown what. The ranking lands in the right neighbourhood for most patients (young-onset, DBS-speech, impulse control, RBD) and fails informatively for others: one patient's cancer history pulled in three oncology drug trials, and the highest similarity score of the whole run belongs to a trial the patient is probably not eligible for. Details in `reports/08_explanations_DRAFT.md`.\n- Outputs: `reports/08_trial_matches.csv` and `.md`, with every match carrying its NCT number so claims trace to the registry. Per-match explanations are drafted by an LLM and marked unverified until checked by a person against the eligibility text.
 - `reports/ETHICS_NOTE.md`: why the patients are fictional, what the matcher is not (an eligibility decision), and where this kind of tool causes harm if misused.
 
 ## Limits
