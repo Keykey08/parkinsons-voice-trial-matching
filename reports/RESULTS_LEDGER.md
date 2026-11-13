@@ -158,3 +158,9 @@ The script ends with four questions for you (section 5). Answer them before quot
 Write any row you cannot explain here, then ask.
 
 - 
+
+---
+
+## 08_match_trials.py: trial matcher (pending the trial download)
+
+Script and 20 fictional patients are in place; `02_fetch_trials.py` has not run because ClinicalTrials.gov was unreachable from the analysis environment on 13 Nov 2026. When it runs, add rows here for: number of trials fetched, trials dropped for missing eligibility text, mean eligible trials per patient after age/sex filters, and mean overlap between TF-IDF and keyword top-5. Check at least 3 patients' top-5 by reading the actual eligibility text before quoting anything.
