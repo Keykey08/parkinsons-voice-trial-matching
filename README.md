@@ -1,8 +1,8 @@
 # Parkinson's from the voice: how much of the reported accuracy is real?
 
-**Status, 12 Nov 2026:** Part A (voice evidence, scripts 01 to 07) is complete. Part B (matching patients to clinical trials) is not started: the fetch script is written and has never been run.
+**Status, 13 Nov 2026:** Part A (voice evidence, scripts 01 to 07) is complete. Part B (matching fictional patients to clinical trials) is built end to end: 20 fictional patient profiles, hard-filter + TF-IDF matcher (`08`), ethics note. The one step not yet run is the trial download itself (`02`), pending network access to ClinicalTrials.gov from the analysis environment; the script is ready and runs anywhere with ordinary internet.
 
-> Research project only. Not a diagnostic tool. Nothing here detects or diagnoses Parkinson's. Only public research datasets are used.
+> Research project only. Not a diagnostic tool. Nothing here detects or diagnoses Parkinson's. Only public research datasets and fictional patients are used.
 
 ## The question
 
@@ -91,10 +91,20 @@ The symptom score (UPDRS) in this dataset was examined at about three clinic vis
 
 This is a null result from a low-powered design. It does not show that voice and symptoms are unrelated. It shows that this dataset, with interpolated scores, cannot detect it.
 
+## Part B: the trial matcher (`02`, `08`)
+
+A retrieval exercise built on the lesson of Part A: keep hard facts and soft similarity separate.
+
+- `data/patients_fictional.json`: 20 fictional UK patient profiles covering newly diagnosed to advanced disease, DBS, cognitive impairment, young onset and common comorbidities. Written **before** any trial data was fetched, so they could not be tailored to the trials (same pre-commitment discipline as the `06` predictions).
+- `02_fetch_trials.py`: downloads recruiting Parkinson's trials from the public ClinicalTrials.gov registry (API v2) with title, summary, eligibility text, age limits and sex.
+- `08_match_trials.py`: applies the stated hard criteria first (age range, sex) as filters a text model can never overrule, then ranks the remaining trials by TF-IDF cosine similarity, with a plain keyword-overlap baseline alongside. TF-IDF rather than a neural encoder is deliberate: every score decomposes into which words matched, so a ranking can be audited by hand. The vectorizer is the one swappable line if a neural upgrade is wanted.
+- Outputs: `reports/08_trial_matches.csv` and `.md`, with every match carrying its NCT number so claims trace to the registry. Per-match explanations are drafted by an LLM and marked unverified until checked by a person against the eligibility text.
+- `reports/ETHICS_NOTE.md`: why the patients are fictional, what the matcher is not (an eligibility decision), and where this kind of tool causes harm if misused.
+
 ## Limits
 
-- Age is not recorded in the Oxford or Istanbul data, so it cannot be ruled out as a confounder there.
-- Recording conditions and medication state are unknown.
+- Per-person age is not in the Oxford or Istanbul data files. The Sakar et al. 2019 paper reports cohort ages (PD 33 to 87, mean 65.1, SD 10.9; controls 41 to 82, mean 61.1, SD 8.9), so the groups roughly overlap but PD runs about 4 years older, and age cannot be adjusted for at person level.
+- Recording protocol in Istanbul per the paper: sustained /a/, three repetitions, 44.1 kHz, collected at the Department of Neurology, Cerrahpasa Faculty of Medicine, Istanbul University. Medication state at recording time is unreported in both classification datasets.
 - Oxford has 8 healthy people. Every Oxford test number carries a wide interval.
 - Both classification datasets are 75% PD, far from any screening population.
 - The telemonitoring symptom scores are interpolated, not measured at each recording.
@@ -104,7 +114,7 @@ This is a null result from a low-powered design. It does not show that voice and
 
 The code in this repository was written with AI assistance (Claude, Anthropic). `AI_USE_LOG.md` records each session: what was asked, what the tool produced and what I checked.
 
-`reports/RESULTS_LEDGER.md` lists every number above with its source file and whether I have reproduced it in my own run. As of 12 Nov 2026 I have run 05 and 06 myself, and part of 03. Scripts 01b, 04 and 07 and the rest of 03 have so far been run by Claude only. The draft of `reports/06_findings.md` was written by Claude and is marked as such until I rewrite it.
+`reports/RESULTS_LEDGER.md` lists every number above with its source file and whether I have reproduced it in my own run. As of 13 Nov 2026 I have run 05 and 06 myself, and part of 03. Scripts 01b, 04 and 07 and the rest of 03 have so far been run by Claude only. The draft of `reports/06_findings.md` was written by Claude and is marked as such until I rewrite it.
 
 ## Reproduce
 
@@ -116,10 +126,8 @@ python src/04_leakage_istanbul.py      # about 5 minutes
 python src/05_external_validation.py
 python src/06_telemonitoring.py
 python src/07_threshold_recalibration.py
+python src/02_fetch_trials.py          # needs internet access to clinicaltrials.gov
+python src/08_match_trials.py
 ```
 
 Each script is split into `# %%` cells with a WHY comment per step, and writes its outputs to `reports/`. Seeds are fixed. Small third-decimal differences between scikit-learn versions are expected. The `07` numbers above come from scikit-learn 1.9.1, where the Istanbul to Oxford random forest AUC is 0.812, not the 0.807 saved by `05` under an earlier version.
-
-## Next (planned, not done)
-
-Trial matcher: fetch recruiting PD trials from ClinicalTrials.gov, write 20 fictional patient descriptions before running anything, retrieve the top 5 trials with text embeddings against a keyword baseline, and check every LLM explanation by hand against the eligibility text.
